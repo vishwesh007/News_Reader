@@ -100,11 +100,11 @@ public class RSSFeedActivity extends ListActivity {
                 map.put(TAG_TITLE, item.title);
                 map.put(TAG_LINK, item.link);
                 map.put(TAG_PUB_DATE, item.pubdate);
-                // adding HashList to ArrayList
+            
                 rssItemList.add(map);
             }
 
-            // updating UI from Background Thread
+           
             runOnUiThread(new Runnable() {
                 public void run() {
                     ListAdapter adapter = new SimpleAdapter(
@@ -113,7 +113,6 @@ public class RSSFeedActivity extends ListActivity {
                             new String[]{TAG_LINK, TAG_TITLE, TAG_PUB_DATE},
                             new int[]{R.id.page_url, R.id.title, R.id.pub_date});
 
-                    // updating listview
                     setListAdapter(adapter);
                 }
             });
