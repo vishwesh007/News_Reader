@@ -73,13 +73,13 @@ public class RSSFeedActivity extends ListActivity {
 
         @Override
         protected String doInBackground(String... args) {
-            // rss link url
+        
             String rss_url = args[0];
-            // list of rss items
+   
             rssItems = rssParser.getRSSFeedItems(rss_url);
-            // looping through each item
+          
             for (final RSSItem item : rssItems) {
-                // creating new HashMap
+            
                 if (item.link.toString().equals(""))
                     break;
                 HashMap<String, String> map = new HashMap<String, String>();
